@@ -36,59 +36,138 @@ Dependencies to run from source
 
 ### Requirements
 
-###### Python 2.7 
+##### Python 2.7 
 
 [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-###### Numpy 
+##### Numpy 
 
-[http://sourceforge.net/projects/numpy/files/NumPy/1.9.1/](http://sourceforge.net/projects/numpy/files/NumPy/1.9.1/)
+    pip install numpy
 
-###### OpenCV 
+##### OpenCV 
+
+###### Windows
 
 [http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.10/](http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.10/) 
 
-Goto opencv/build/python/2.7 folder. 
+* Goto opencv/build/python/2.7 folder. 
+* Copy cv2.pyd to C:/Python27/lib/site-packages.
 
-Copy cv2.pyd to C:/Python27/lib/site-packages.
+###### Mac OSx
 
-###### Python-Tesseract 
+Install using [homebrew][1]
 
-[https://bitbucket.org/3togo/python-tesseract/downloads/](https://bitbucket.org/3togo/python-tesseract/downloads/)
+	brew tap homebrew/science
+    brew install opencv
+    cd /User/Library/2.7/site-packages 
+    # make sure you adjust accordingly for virtualenv etc..
+    ln -s /usr/local/Cellar/opencv/2.4.10.1/lib/python2.7/site-packages/cv.py cv.py
+    ln -s /usr/local/Cellar/opencv/2.4.10.1/lib/python2.7/site-packages/cv2.so cv2.so
 
-######PyQt4 
+##### Python-Tesseract
 
+###### Windows
+
+Download the latest executable: [https://bitbucket.org/3togo/python-tesseract/downloads/](https://bitbucket.org/3togo/python-tesseract/downloads/)
+
+###### Mac OSX
+Download and install Tesseract using [homebrew][1]
+
+	brew install Tesseract
+	
+Install the egg directly from the repository
+	
+	easy_install https://bitbucket.org/3togo/python-tesseract/downloads/python_tesseract-0.9.1-py2.7-macosx-10.10-x86_64.egg
+
+##### PyQt4
+
+###### Windows
+
+Install the latest executable:
 [http://www.riverbankcomputing.co.uk/software/pyqt/download](http://www.riverbankcomputing.co.uk/software/pyqt/download)
 
-###### qimage2ndarray 
+###### Mac OSX
 
-pip install qimage2ndarray 
+* Download the latest 4.x version of QT and the debug libraries from the archive: [http://download.qt.io/archive/qt/4.8/4.8.6/](http://download.qt.io/archive/qt/4.8/4.8.6/). 
+* Install QT and the optional debug libraries onto your system using the packages within the `dmg` images downloaded
+* Download the latest version of SIP from [http://www.riverbankcomputing.com/software/sip/download](http://www.riverbankcomputing.com/software/sip/download)
+* Unpack the downloaded tar
+* Move to the `docs/` directory and open the `installation.html` file. Follow the instructions.
+* Download the latest source code for Mac OS from [http://www.riverbankcomputing.co.uk/software/pyqt/download](http://www.riverbankcomputing.co.uk/software/pyqt/download)
+* Unpack the downloaded tar
+* Open the README and follow the installation instructions
+
+##### qimage2ndarray 
+
+	pip install qimage2ndarray 
 
 [http://pypi.python.org/pypi/qimage2ndarray](http://pypi.python.org/pypi/qimage2ndarray)
 
-###### Openpyxl 
+##### Openpyxl 
 
-pip install openpyxl
+	pip install openpyxl
 
 [https://pypi.python.org/pypi/openpyxl](https://pypi.python.org/pypi/openpyxl)
     
-###### Ezodf 
+##### Ezodf 
 
-pip install ezodf
+	pip install ezodf
 
 [https://pypi.python.org/pypi/ezodf](https://pypi.python.org/pypi/ezodf)
 
-###### Lxml
+##### Lxml
 
-pip install lxml
+	pip install lxml
 
 [https://pypi.python.org/pypi/lxml](https://pypi.python.org/pypi/lxml)
 
-###### python-Levenshtein
+##### python-Levenshtein
 
-pip install python-Levenshtein
+	pip install python-Levenshtein
 
 [https://pypi.python.org/pypi/python-Levenshtein/](https://pypi.python.org/pypi/python-Levenshtein/)
+
+##### pytz
+
+	pip install pytz
+
+[https://pypi.python.org/pypi/pytz](https://pypi.python.org/pypi/pytz)
+
+##### tzlocal
+
+	pip install tzlocal
+
+[https://pypi.python.org/pypi/tzlocal](https://pypi.python.org/pypi/tzlocal)
+
+##### BeautifulSoup4
+
+	pip install beautifulsoup4
+	
+[https://pypi.python.org/pypi/beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4)
+
+##### SciPy
+
+	pip install scipy
+
+[https://pypi.python.org/pypi/scipy](https://pypi.python.org/pypi/scipy)
+
+#####  Scikit-Learn
+
+	pip install -U sckit-learn
+
+[https://pypi.python.org/pypi/scikit-learn](https://pypi.python.org/pypi/scikit-learn)
+
+##### requests
+
+	pip install requests
+	
+[https://pypi.python.org/pypi/requests](https://pypi.python.org/pypi/requests)
+
+###### wget
+
+	pip install wget
+
+[https://pypi.python.org/pypi/wget](https://pypi.python.org/pypi/wget)
 
 
 Run EliteOCR.py
@@ -99,3 +178,6 @@ To create a standalone exe file
 pip install pyinstaller
 
 pyinstaller --onedir EliteOCR.py
+
+
+[1]: http://brew.sh/

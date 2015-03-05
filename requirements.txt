@@ -1,0 +1,15 @@
+beautifulsoup4==4.3.2
+ezodf==0.3.0
+lxml==3.4.2
+numpy==1.9.2
+openpyxl==2.1.5
+pylint==1.1.0
+python-Levenshtein==0.12.0
+python-tesseract==0.9.1
+pytz==2014.10
+qimage2ndarray==1.4
+requests==2.5.3
+scikit-learn==0.15.2
+scipy==0.15.1
+tzlocal==1.1.2
+wget==2.2

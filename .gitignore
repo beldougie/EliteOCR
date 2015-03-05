@@ -68,14 +68,14 @@ build/
 *.tlb
 *.tli
 *.tlh
-*.tmp
+# *.tmp already defined above
 *.tmp_proj
 *.log
 *.vspscc
 *.vssscc
 .builds
 *.pidb
-*.log
+# *.log already defined above
 *.scc
 
 # Visual C++ cache files
@@ -194,7 +194,7 @@ $RECYCLE.BIN/
 *.egg
 *.egg-info
 dist/
-build/
+# build/ already defined above
 eggs/
 parts/
 var/
@@ -217,11 +217,12 @@ pip-log.txt
 
 #jetbrains project files
 .idea
-.idea/
-.idea/*
 
 #Compiled files for release
 compiled
 
 # Neural Net training/source data
 nn_training_images
+
+# Development logs
+errorlog.txt
