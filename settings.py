@@ -1,11 +1,14 @@
 import sys
 import random
-from os import environ
+from os import environ, name
 from os.path import isdir, dirname, split, realpath
 from PyQt4.QtCore import QSettings, QString
 from PyQt4.QtGui import QMessageBox, QFileDialog
 
+
 class Settings():
+    PROFILE_KEY = 'HOME' if name == 'posix' else 'USERINFO'
+
     def __init__(self, parent=None):
         self.parent = parent
         self.app_path = self.getPathToSelf()
@@ -138,15 +141,15 @@ class Settings():
         self.reg.setValue('native_dialog', False)
         
     def setDefaultScreenshotDir(self):
-        if isdir(environ['USERPROFILE']+'\\Pictures\\Frontier Developments\\Elite Dangerous'):
-            dir = environ['USERPROFILE']+'\\Pictures\\Frontier Developments\\Elite Dangerous'
+        if isdir(environ[self.PROFILE_KEY]+'\\Pictures\\Frontier Developments\\Elite Dangerous'):
+            dir = environ[self.PROFILE_KEY]+'\\Pictures\\Frontier Developments\\Elite Dangerous'
         else:
             dir = self.app_path
         self.reg.setValue('screenshot_dir', dir)
         
     def setDefaultLogDir(self):
-        if isdir(environ['USERPROFILE']+'\\AppData\\Local\\Frontier_Developments\\Products\\FORC-FDEV-D-1002\\Logs'):
-            logdir = environ['USERPROFILE']+'\\AppData\\Local\\Frontier_Developments\\Products\\FORC-FDEV-D-1002\\Logs'
+        if isdir(environ[self.PROFILE_KEY]+'\\AppData\\Local\\Frontier_Developments\\Products\\FORC-FDEV-D-1002\\Logs'):
+            logdir = environ[self.PROFILE_KEY]+'\\AppData\\Local\\Frontier_Developments\\Products\\FORC-FDEV-D-1002\\Logs'
             self.reg.setValue('log_dir', logdir)
         else:
             self.reg.setValue('log_dir', self.app_path)
